@@ -117,10 +117,12 @@ Currency Currency::operator+(const Currency& x)const {
 Currency Currency::operator*(const Currency& x)const {
 	Currency ans;
 	ans.amount = x.amount * amount;
+	return ans;
 }
 Currency Currency::operator-(const Currency& x)const {
 	Currency ans;
 	ans.amount = amount - x.amount;
+	return ans;
 }
 Currency Currency::operator/(const Currency& x)const {
 	if (x.amount == 0) {
@@ -129,6 +131,7 @@ Currency Currency::operator/(const Currency& x)const {
 	}
 	Currency ans;
 	ans.amount = amount / x.amount;
+	return ans;
 }
 long Currency::Input(istream& in)const {
 	long ans;
