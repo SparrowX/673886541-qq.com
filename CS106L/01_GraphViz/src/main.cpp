@@ -72,8 +72,14 @@ int main() {
             mygraph.nodes.push_back({x, y});
         }
         size_t one, two;
-        while(myfilestream>>one>>two){
-            mygraph.edges.push_back({one,two});
+        string line;
+        //while(myfilestream>>one>>two){
+        //           mygraph.edges.push_back({one,two});
+        //       }
+        while(getline(myfilestream, line)){
+            stringstream s(line);
+            //确保输入数据有效
+            if(s>>one>>two) mygraph.edges.push_back({one, two});
         }
         DrawGraph(mygraph);
 
@@ -124,7 +130,6 @@ int main() {
             //convert to milliseconds
             auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
             milliseconds = elapsed.count();
-
         }
         cout<<"Iteration end, do you want to continue?"<<endl;
         input_prompt();
