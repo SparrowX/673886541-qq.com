@@ -78,7 +78,8 @@ int main() {
         //       }
         while(getline(myfilestream, line)){
             stringstream s(line);
-            //确保输入数据有效
+            //cout<<"this is a line:"<<line<<endl;
+            //确保输入数据有效，因为最开始会读入空行
             if(s>>one>>two) mygraph.edges.push_back({one, two});
         }
         DrawGraph(mygraph);
