@@ -25,7 +25,6 @@ void dfs(int i, int depth, int& step) {
 
 }
 int main() {
-    int matrix[4][4];
     int step; cin >> step;
     dfs(0, 0, step);
     cout << ans;
